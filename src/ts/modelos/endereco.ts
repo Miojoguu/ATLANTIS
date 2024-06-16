@@ -27,14 +27,14 @@ export default class Endereco implements Prototipo {
     public set setRua(rua:string) { 
         this.rua = rua 
     }
-    public set setBairro(bairro:string) {
-         this.bairro = bairro
-        }
-    public set setCidade(cidade:string) { 
-        this.cidade = cidade 
+    public set setBairro(bairro:string) { 
+        this.bairro = bairro }
+    public set setCidade(cidade:string) { this.cidade = cidade 
+
     }
     public set setEstado(estado:string) { 
-        this.estado = estado }
+        this.estado = estado 
+    }
     public set setPais(pais:string) { 
         this.pais = pais 
     }

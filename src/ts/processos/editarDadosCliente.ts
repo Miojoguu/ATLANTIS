@@ -1,11 +1,11 @@
 import Processo from "../abstracoes/processo";
-import MenuOpcaoDadosCliente from "../menus/menuClienteEditar";
+import MenuOpcaoDadosCliente from "../menus/menuOpcaoDadosCliente";
 import Cliente from "../modelos/cliente";
 
-export default class EditarDadosCliente extends Processo{
-    private cliente:Cliente
+export default class EditarDadosCliente extends Processo {
+    private cliente: Cliente
 
-    constructor(cliente:Cliente){
+    constructor(cliente: Cliente) {
         super()
         this.cliente = cliente
         this.menu = new MenuOpcaoDadosCliente()
@@ -13,13 +13,13 @@ export default class EditarDadosCliente extends Processo{
     }
 
     processar(): void {
-        
-        while(this.execucao){
+
+        while (this.execucao) {
 
             this.menu.mostrar()
             this.opcao = this.entrada.receberNumero('Qual opção desejada atualizar?')
 
-            switch(this.opcao){
+            switch (this.opcao) {
                 case 1:
                     let novoNome = this.entrada.receberTexto('Digite o novo nome: ')
                     this.cliente.setNome = novoNome
@@ -43,5 +43,5 @@ export default class EditarDadosCliente extends Processo{
             }
         }
     }
-    
+
 }

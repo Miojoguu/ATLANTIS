@@ -4,7 +4,7 @@ export default class MenuTipoEditarCliente implements Menu{
     mostrar(): void {
         console.clear()
         console.log(`****************************`)
-        console.log(`| Voce quer editar qual tipo de cliente?`)
+        console.log(`| Qual o tipo do cliente deseja editar? `)
         console.log(`----------------------`)
         console.log(`| 1 - Titular`)
         console.log(`| 2 - Dependente`)

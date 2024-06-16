@@ -1,3 +1,3 @@
-export default interface Atualizador{
-    atualizar():void;
+export default interface Atualizador {
+    atualizar(): void;
 }

@@ -9,6 +9,9 @@ export default class Telefone {
     }
     public get Ddd() { return this.ddd }
     public get Numero() { return this.numero }
+    public get DDDnumero() {
+        return this.Ddd + ' ' + this.Numero
+    }
 
     public set setDDD(ddd:string) { 
         this.ddd = ddd 
@@ -16,7 +19,7 @@ export default class Telefone {
     public set setNumero(numero:string) { 
         this.numero = numero 
     }
-    
+
     clonar(): Prototipo {
         let telefone = new Telefone(this.ddd, this.numero)
         return telefone

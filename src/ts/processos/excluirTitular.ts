@@ -19,10 +19,10 @@ export default class ExcluirTitular extends Processo {
 
         let numeroDocumento = this.entrada.receberTexto(`Digite o numero do documento do titular: `)
         let indice = this.clientes.findIndex((cliente: Cliente) => cliente.Documentos.find((documento: Documento) => documento.Numero === numeroDocumento))
-        let filtrados = this.clientes.filter(cliente => (cliente.Documentos.find((documento: Documento) => documento.Numero === numeroDocumento )));
-        let documentos: any[]= []
+        let filtrados = this.clientes.filter(cliente => (cliente.Documentos.find((documento: Documento) => documento.Numero === numeroDocumento)));
+        let documentos: any[] = []
         filtrados.forEach(element => {
-            element.Dependentes.forEach(d => d.Documentos.forEach( doc => { documentos.push({ numero:doc.Numero }) }))
+            element.Dependentes.forEach(d => d.Documentos.forEach(doc => { documentos.push({ numero: doc.Numero }) }))
         });
 
         documentos.forEach(excluido => {
@@ -30,7 +30,7 @@ export default class ExcluirTitular extends Processo {
                 const cliente = this.clientes[i];
                 for (let index = 0; index < cliente.Documentos.length; index++) {
                     const documento = cliente.Documentos[index];
-                    if(documento.Numero === excluido.numero){
+                    if (documento.Numero === excluido.numero) {
                         this.clientes.splice(i, 1)
                     }
                     break

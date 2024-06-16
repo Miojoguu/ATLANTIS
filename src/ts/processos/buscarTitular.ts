@@ -10,20 +10,20 @@ export default class BuscarTitular implements Buscador<Cliente>{
     private clientes!: Cliente[]
     private entrada = new Entrada()
 
-    constructor(){
+    constructor() {
         this.clientes = Armazem.InstanciaUnica.Clientes
     }
 
     buscar() {
-        
+
         let listagem = new ListagemTitulares()
         listagem.processar()
-        
+
         let numeroDocumento = this.entrada.receberTexto("Digite o numero do documento do titular desejado: ")
 
-        this.clientes.forEach( (cliente: Cliente) => {
-            cliente.Documentos.forEach( (documento:Documento) => {
-                if( documento.Numero === numeroDocumento){
+        this.clientes.forEach((cliente: Cliente) => {
+            cliente.Documentos.forEach((documento: Documento) => {
+                if (documento.Numero === numeroDocumento) {
                     this.titular = cliente
                 }
             })

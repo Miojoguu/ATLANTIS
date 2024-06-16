@@ -1,12 +1,12 @@
 import Processo from "../abstracoes/processo";
-import MenuOpcaoEndereco from "../menus/menuEnderecoEditar";
+import MenuOpcaoEndereco from "../menus/menuOpcaoEndereco";
 import Cliente from "../modelos/cliente";
 import Endereco from "../modelos/endereco";
 
-export default class EditarEnderecoCliente extends Processo{
-    private cliente!:Cliente
+export default class EditarEnderecoCliente extends Processo {
+    private cliente!: Cliente
 
-    constructor(cliente:Cliente){
+    constructor(cliente: Cliente) {
         super()
         this.cliente = cliente
         this.menu = new MenuOpcaoEndereco()
@@ -14,12 +14,12 @@ export default class EditarEnderecoCliente extends Processo{
     }
 
     processar(): void {
-        while(this.execucao){
+        while (this.execucao) {
 
             this.menu.mostrar()
             this.opcao = this.entrada.receberNumero('Qual opção desejada atualizar?')
 
-            switch(this.opcao){
+            switch (this.opcao) {
                 case 1:
                     let novaRua = this.entrada.receberTexto('Digite a nova rua: ')
                     this.cliente.Endereco.setRua = novaRua
@@ -55,5 +55,5 @@ export default class EditarEnderecoCliente extends Processo{
             }
         }
     }
-    
+
 }

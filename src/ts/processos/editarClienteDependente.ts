@@ -1,37 +1,37 @@
 import Processo from "../abstracoes/processo";
 import ImpressorDependente from "../impressores/impressorDependente";
 import Impressor from "../interfaces/impressor";
-import MenuOpcaoDependenteEditar from "../menus/menuDependenteEditar";
+import MenuOpcaoDependenteEditar from "../menus/menuOpcaoDependenteEditar";
 import Cliente from "../modelos/cliente";
 import BuscarDependente from "./buscarDependente";
 import AtualizarInformacoesDependenteTitular from "./atualizarInformacoesDependenteTitular";
 import EditarDadosCliente from "./editarDadosCliente";
 import EditarDocumentoCliente from "./editarDocumentoCliente";
 
-export default class EditarClienteDependente extends Processo{
-    private dependente!:Cliente
-    private impressor!:Impressor
-    private busca:BuscarDependente = new BuscarDependente()
+export default class EditarClienteDependente extends Processo {
+    private dependente!: Cliente
+    private impressor!: Impressor
+    private busca: BuscarDependente = new BuscarDependente()
 
-    constructor(){
+    constructor() {
         super()
         this.menu = new MenuOpcaoDependenteEditar()
         this.execucao = true
     }
 
     processar(): void {
-        
+
         this.dependente = this.busca.buscar()
 
-        if(this.dependente === undefined){
+        if (this.dependente === undefined) {
             console.log('Dependente não encontrado...');
-        }else{
-            while(this.execucao){
+        } else {
+            while (this.execucao) {
 
                 this.menu.mostrar()
                 this.opcao = this.entrada.receberNumero('Qual opção desejada? ')
 
-                switch(this.opcao){
+                switch (this.opcao) {
                     case 1:
                         this.processo = new EditarDadosCliente(this.dependente)
                         this.processo.processar()
@@ -54,5 +54,5 @@ export default class EditarClienteDependente extends Processo{
             }
         }
     }
-    
+
 }

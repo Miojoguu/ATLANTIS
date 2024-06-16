@@ -1,5 +1,5 @@
 import Processo from "../abstracoes/processo";
-import MenuTipoEditarCliente from "../menus/menuOpcaoClienteParaEditar";
+import MenuTipoEditarCliente from "../menus/menuTipoEditarCliente";
 import EditarClienteDependente from "./editarClienteDependente";
 import EditarClienteTitular from "./editarClienteTitular";
 

@@ -1,5 +1,5 @@
 import Processo from "../abstracoes/processo";
-import MenuTipoExcluir from "../menus/menuOpcaoClienteParaExcluir";
+import MenuTipoExcluir from "../menus/menuTipoExcluir";
 import ExcluirDependente from "./excluirDependente";
 import ExcluirTitular from "./excluirTitular";
 

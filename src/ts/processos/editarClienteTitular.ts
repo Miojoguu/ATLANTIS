@@ -1,6 +1,6 @@
 import Processo from "../abstracoes/processo";
 import Cliente from "../modelos/cliente";
-import MenuOpcaoTitularEditar from '../menus/menuClienteEditar';
+import MenuOpcaoTitularEditar from '../menus/menuOpcaoTitularEditar';
 import EditarDadosCliente from "./editarDadosCliente";
 import EditarTelefoneCliente from "./editarTelefoneCliente";
 import EditarEnderecoCliente from "./editarEnderecoCliente";
@@ -11,12 +11,12 @@ import ImpressorClienteDocumento from "../impressores/impressorClienteDocumento"
 import ImpressorCliente from "../impressores/impressorCliente";
 import AtualizarInformacoesTitularDependentes from "./atualizarInformacoesTitularDependentes";
 
-export default class EditarClienteTitular extends Processo{
+export default class EditarClienteTitular extends Processo {
     private impressor!: Impressor
-    private titular!:Cliente
-    private busca:BuscarTitular = new BuscarTitular()
+    private titular!: Cliente
+    private busca: BuscarTitular = new BuscarTitular()
 
-    constructor(){
+    constructor() {
         super()
         this.menu = new MenuOpcaoTitularEditar()
         this.execucao = true
@@ -26,18 +26,18 @@ export default class EditarClienteTitular extends Processo{
 
         this.titular = this.busca.buscar();
 
-        if(this.titular === undefined){
+        if (this.titular === undefined) {
             console.log("Titular não encontrado...");
-        }else{
+        } else {
             this.impressor = new ImpressorClienteDocumento(this.titular)
             console.log(this.impressor.imprimir())
 
-            while(this.execucao){
+            while (this.execucao) {
 
                 this.menu.mostrar()
                 this.opcao = this.entrada.receberNumero('Qual opção desejada?')
 
-                switch(this.opcao){
+                switch (this.opcao) {
                     case 1:
                         this.processo = new EditarDadosCliente(this.titular)
                         this.processo.processar()

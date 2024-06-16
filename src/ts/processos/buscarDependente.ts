@@ -6,11 +6,11 @@ import Documento from "../modelos/documento";
 import ListagemDependentes from "./listagemDependentes";
 
 export default class BuscarDependente implements Buscador<Cliente>{
-    private clientes!:Cliente[]
-    private dependente!:Cliente
+    private clientes!: Cliente[]
+    private dependente!: Cliente
     private entrada = new Entrada()
 
-    constructor(){
+    constructor() {
         this.clientes = Armazem.InstanciaUnica.Clientes
     }
 
@@ -21,9 +21,9 @@ export default class BuscarDependente implements Buscador<Cliente>{
 
         let numeroDocumento = this.entrada.receberTexto("Digite o numero do documento do dependente desejado: ")
 
-        this.clientes.forEach( (cliente:Cliente) => {
-            cliente.Documentos.forEach( (documento:Documento) => {
-                if(documento.Numero === numeroDocumento){
+        this.clientes.forEach((cliente: Cliente) => {
+            cliente.Documentos.forEach((documento: Documento) => {
+                if (documento.Numero === numeroDocumento) {
                     this.dependente = cliente
                 }
             })
