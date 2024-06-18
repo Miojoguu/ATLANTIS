@@ -1,10 +1,6 @@
 # ATLANTIS
-Repositório criado para a atividade do terceiro semestre do professor Gerson
+Listas do Gerson aqui nesse repositorio
 
-Abra o terrminal de comando e digite:
+Nome: Gustavo Borges Lima
 
--npm install
-
--npx tsc
-
--node src/js/app/app.js
+Turma: 3DSM
